@@ -1,0 +1,13 @@
+{
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "editor.formatOnSave": true,
+  "editor.formatOnSaveMode": "modifications",
+  "editor.guides.bracketPairs": true,
+  "js/ts.implicitProjectConfig.experimentalDecorators": true,
+  "js/ts.implicitProjectConfig.strictNullChecks": true,
+  "js/ts.implicitProjectConfig.checkJs": true,
+  "editor.parameterHints.enabled": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll": "always",
+  },
+}

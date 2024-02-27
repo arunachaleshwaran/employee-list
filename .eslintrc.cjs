@@ -1,20 +1,22 @@
 module.exports = {
   root: true,
   env: { browser: true, es2021: true },
+  plugins: ['react', 'react-refresh', 'react-hooks'],
   extends: [
     'eslint:all',
     'plugin:@typescript-eslint/all',
-    // 'plugin:react/all',
-    // 'plugin:react-hooks/recommended'
+    'plugin:react/all',
+    'plugin:react-hooks/recommended'
   ],
   settings: {
-    createClass: 'createReactClass',
-    pragma: 'React',
-    version: 'detect',
+    react: {
+      createClass: 'createReactClass',
+      pragma: 'React',
+      version: '18.2',
+    }
   },
   ignorePatterns: ['dist', '.eslintrc.cjs'],
   parser: '@typescript-eslint/parser',
-  plugins: ['react', 'react-refresh', 'react-hooks'],
   parserOptions: {
     ecmaVersion: 2022,
     sourceType: 'module',
@@ -36,8 +38,20 @@ module.exports = {
       }],
     'sort-keys': 0,
     '@typescript-eslint/no-confusing-void-expression': [
-      'warn',
+      'error',
       { ignoreArrowShorthand: true },
-    ]
+    ],
+    'react/jsx-indent': ['warn', 2],
+    'react/jsx-max-props-per-line': ['warn', { maximum: 4, when: 'always' }],
+    'react/jsx-sort-props': ['warn', { callbacksLast: true, shorthandLast: true, reservedFirst: true }],
+    'react/jsx-max-depth': ['error', { max: 4 }],
+    'react/jsx-newline': ['warn', { prevent: true }],
+    'react/jsx-one-expression-per-line': 'off',
+    'react/jsx-no-literals': 'off',
+    'react/jsx-no-bind': ['error', {
+      allowArrowFunctions: true,
+      allowFunctions: false,
+      allowBind: false,
+    }]
   }
 }

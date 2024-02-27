@@ -1,14 +1,14 @@
-import './index.css'
-import App from './App.tsx'
-import React from 'react'
-import ReactDOM from 'react-dom/client'
+import './index.css';
+import App from './App.tsx';
+import React from 'react';
+import ReactDOM from 'react-dom/client';
 
 const root = document.getElementById('root');
 if (root === null) {
-    throw new Error('Root element not found')
+  throw new Error('Root element not found');
 }
 ReactDOM.createRoot(root).render(
   <React.StrictMode>
     <App />
-  </React.StrictMode>,
-)
+  </React.StrictMode>
+);

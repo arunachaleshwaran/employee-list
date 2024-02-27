@@ -1,5 +1,6 @@
 {
   "javascript.updateImportsOnFileMove.enabled": "always",
+  "editor.formatOnPaste": true,
   "editor.formatOnSave": true,
   "editor.formatOnSaveMode": "modifications",
   "editor.guides.bracketPairs": true,
@@ -7,7 +8,13 @@
   "js/ts.implicitProjectConfig.strictNullChecks": true,
   "js/ts.implicitProjectConfig.checkJs": true,
   "editor.parameterHints.enabled": true,
+  "eslint.format.enable": true,
+  "eslint.lintTask.enable": true,
   "editor.codeActionsOnSave": {
-    "source.fixAll": "always",
+    "source.fixAll.eslint": "always",
+  },
+  "editor.defaultFormatter": "mblode.pretty-formatter",
+  "[javascript]": {
+    "editor.defaultFormatter": "vscode.typescript-language-features"
   },
 }

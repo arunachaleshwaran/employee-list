@@ -3,6 +3,7 @@
     "antfu.vite",
     "yzhang.markdown-all-in-one",
     "dsznajder.es7-react-js-snippets",
-    "dbaeumer.vscode-eslint"
+    "dbaeumer.vscode-eslint",
+    "mblode.pretty-formatter"
   ]
 }

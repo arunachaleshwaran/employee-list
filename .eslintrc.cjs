@@ -1,12 +1,13 @@
 module.exports = {
   root: true,
   env: { browser: true, es2021: true },
-  plugins: ['react', 'react-refresh', 'react-hooks'],
+  plugins: ['react', 'react-refresh', 'react-hooks', 'prettier'],
   extends: [
     'eslint:all',
     'plugin:@typescript-eslint/all',
     'plugin:react/all',
-    'plugin:react-hooks/recommended'
+    'plugin:react-hooks/recommended',
+    'plugin:prettier/recommended'
   ],
   settings: {
     react: {
@@ -41,7 +42,7 @@ module.exports = {
       'error',
       { ignoreArrowShorthand: true },
     ],
-    'react/jsx-indent': ['warn', 2],
+    'react/jsx-indent': 'off',
     'react/jsx-max-props-per-line': ['warn', { maximum: 4, when: 'always' }],
     'react/jsx-sort-props': ['warn', { callbacksLast: true, shorthandLast: true, reservedFirst: true }],
     'react/jsx-max-depth': ['error', { max: 4 }],
@@ -52,6 +53,7 @@ module.exports = {
       allowArrowFunctions: true,
       allowFunctions: false,
       allowBind: false,
-    }]
+    }],
+    'prettier/prettier': 'error'
   }
 }

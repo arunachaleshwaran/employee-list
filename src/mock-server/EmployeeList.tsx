@@ -1,0 +1,73 @@
+import type { EmployeeData } from './EmployeeData.model';
+export const EmployeeList: Array<EmployeeData> = [
+  {
+    id: 'mark-hill',
+    name: 'Mark Hill',
+    designation: 'Chief executive officer',
+    team: '',
+    manager: '',
+  },
+  {
+    id: 'joe-linux',
+    name: 'Joe Linux',
+    designation: 'Chief Technology Officer',
+    team: 'Technology',
+    manager: 'mark-hill',
+  },
+  {
+    id: 'linda-may',
+    name: 'Linda May',
+    designation: 'Chief Business Officer',
+    team: 'Business',
+    manager: 'mark-hill',
+  },
+  {
+    id: 'john-green',
+    name: 'John Green',
+    designation: 'Chief Accounting Officer',
+    team: 'Finance',
+    manager: 'mark-hill',
+  },
+  {
+    id: 'ron-blomquist',
+    name: 'Ron Blomquist',
+    designation: 'Security Officer',
+    team: 'Technology',
+    manager: 'joe-linux',
+  },
+  {
+    id: 'michael-rubin',
+    name: 'Michael Rubin',
+    designation: 'Chief Innovation Officer',
+    team: 'Technology',
+    manager: 'joe-linux',
+  },
+  {
+    id: 'alice-lopez',
+    name: 'Alice Lopez',
+    designation: 'Chief Communications Officer',
+    team: 'Business',
+    manager: 'linda-may',
+  },
+  {
+    id: 'mary-johnson',
+    name: 'Mary Johnson',
+    designation: 'Chief Brand Officer',
+    team: 'Business',
+    manager: 'linda-may',
+  },
+  {
+    id: 'kirk-douglas',
+    name: 'Kirk Douglas',
+    designation: 'Development Officer',
+    team: 'Business',
+    manager: 'linda-may',
+  },
+  {
+    id: 'erica-reel',
+    name: 'Erica Reel',
+    designation: 'Chief Customer Officer',
+    team: 'Finance',
+    manager: 'john-green',
+  },
+];

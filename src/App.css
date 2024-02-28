@@ -6,4 +6,41 @@ main {
 #side-bar {
   background-color: var(--primary-700);
   color: var(--secondary-200);
+  padding: 0 0.5em;
+  display: grid;
+  grid-template-rows: auto auto 1fr;
+  grid-template-areas:
+    'header'
+    'search'
+    'list';
+  max-height: 100svh;
+  h1 {
+    grid-area: header;
+  }
+  ul {
+    grid-area: list;
+    padding-inline-start: initial;
+    gap: 0.5em;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: var(--primary-300) var(--primary-700);
+    scrollbar-width: thin;
+  }
+  li {
+    list-style-type: none;
+    padding: 0.5em;
+    border: 1px solid var(--primary-400);
+    border-radius: 0.5em;
+    .name {
+      color: var(--primary-200);
+    }
+    .designation {
+      font-size: 0.7rem;
+    }
+    .manager {
+      font-size: 0.7rem;
+    }
+  }
 }

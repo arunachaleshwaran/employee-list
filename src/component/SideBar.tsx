@@ -3,8 +3,8 @@ import { useQuery } from 'react-query';
 
 export default function SideBar() {
   const {
-    isLoading,
     error,
+    status,
     data: employeeList,
   } = useQuery<unknown, Error | null, Array<EmployeeData>>({
     queryKey: ['users'],
@@ -15,16 +15,16 @@ export default function SideBar() {
   });
   return (
     <section id='side-bar'>
-      <h2>Employee List</h2>
-      {isLoading ? (
-        <p>Loading...</p>
-      ) : error ? (
-        <p>Error: {error.message}</p>
-      ) : (
+      <h1>Employee List</h1>
+      {(status === 'loading' || status === 'idle') && <progress />}
+      {status === 'error' && <p>Error: {error?.message}</p>}
+      {status === 'success' && (
         <ul>
-          {employeeList?.map(user => (
+          {employeeList.map(user => (
             <li key={user.id}>
-              {user.name} - {user.manager}
+              <div className='name'>{user.name}</div>
+              <div className='designation'>{user.designation}</div>
+              <div className='manager'>{user.manager}</div>
             </li>
           ))}
         </ul>

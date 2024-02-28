@@ -84,6 +84,7 @@ module.exports = {
     'no-nested-ternary': 'off',
     'no-ternary': 'off',
     'no-duplicate-imports': 'off',
+    'max-lines-per-function': 'off',
     'prettier/prettier': 'error',
   },
 };

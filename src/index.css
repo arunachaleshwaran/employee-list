@@ -1,0 +1,36 @@
+* {
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: unset;
+  --hue-primary: 50; /* orange */
+  --hue-secondary: 240; /* blue */
+  --primary-100: oklch(95% 0.02 var(--hue-primary));
+  --primary-200: oklch(90% 0.1 var(--hue-primary));
+  --primary-300: oklch(80% 0.2 var(--hue-primary));
+  --primary-400: oklch(72% 0.22 var(--hue-primary));
+  --primary-500: oklch(67% 0.31 var(--hue-primary));
+  --primary-600: oklch(50% 0.25 var(--hue-primary));
+  --primary-700: oklch(30% 0.2 var(--hue-primary));
+  --primary-800: oklch(13% 0.2 var(--hue-primary));
+  --primary-900: oklch(5% 0.2 var(--hue-primary));
+  --secondary-100: oklch(95% 0.02 var(--hue-secondary));
+  --secondary-200: oklch(90% 0.1 var(--hue-secondary));
+  --secondary-300: oklch(80% 0.2 var(--hue-secondary));
+  --secondary-400: oklch(72% 0.22 var(--hue-secondary));
+  --secondary-500: oklch(67% 0.31 var(--hue-secondary));
+  --secondary-600: oklch(50% 0.25 var(--hue-secondary));
+  --secondary-700: oklch(30% 0.2 var(--hue-secondary));
+  --secondary-800: oklch(13% 0.2 var(--hue-secondary));
+  --secondary-900: oklch(5% 0.2 var(--hue-secondary));
+}
+@property --hue-primary {
+  syntax: '<number>';
+  inherits: true;
+}
+@property --hue-secondary {
+  syntax: '<number>';
+  inherits: true;
+}

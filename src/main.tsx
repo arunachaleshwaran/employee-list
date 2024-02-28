@@ -1,7 +1,7 @@
 import './index.css';
 import { QueryClient, QueryClientProvider } from 'react-query';
+import React, { Profiler } from 'react';
 import App from './App.tsx';
-import React from 'react';
 import ReactDOM from 'react-dom/client';
 
 const root = document.getElementById('root');
@@ -11,8 +11,10 @@ if (root === null) {
 const queryClient = new QueryClient();
 ReactDOM.createRoot(root).render(
   <React.StrictMode>
-    <QueryClientProvider client={queryClient}>
-      <App />
-    </QueryClientProvider>
+    <Profiler id='app' onRender={(...arg) => console.log(...arg)}>
+      <QueryClientProvider client={queryClient}>
+        <App />
+      </QueryClientProvider>
+    </Profiler>
   </React.StrictMode>
 );

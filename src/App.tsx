@@ -1,7 +1,14 @@
 import './App.css';
-// A
+import './mock-server';
+import SideBar from './component/SideBar';
+
 function App() {
-  return <>Hello world</>;
+  return (
+    <main>
+      <SideBar />
+      <section>flow chat hear</section>
+    </main>
+  );
 }
 
 export default App;

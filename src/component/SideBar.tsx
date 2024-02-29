@@ -16,7 +16,7 @@ export default function SideBar() {
   return (
     <section id='side-bar'>
       <h1>Employee List</h1>
-      {status === 'pending' && <progress />}
+      {status === 'pending' && <div className='loader' />}
       {status === 'error' && <p>Error: {error?.message}</p>}
       {status === 'success' && (
         <ul>

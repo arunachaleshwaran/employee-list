@@ -1,5 +1,5 @@
 import type { EmployeeData } from '../mock-server/EmployeeData.model';
-import { useQuery } from 'react-query';
+import { useQuery } from '@tanstack/react-query';
 
 export default function SideBar() {
   const {
@@ -16,7 +16,7 @@ export default function SideBar() {
   return (
     <section id='side-bar'>
       <h1>Employee List</h1>
-      {(status === 'loading' || status === 'idle') && <progress />}
+      {status === 'pending' && <progress />}
       {status === 'error' && <p>Error: {error?.message}</p>}
       {status === 'success' && (
         <ul>

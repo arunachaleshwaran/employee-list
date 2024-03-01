@@ -11,7 +11,7 @@ main {
   grid-template-rows: auto auto 1fr;
   grid-template-areas:
     'header'
-    'search'
+    'filters'
     'list';
   max-height: 100svh;
   h1 {
@@ -19,6 +19,29 @@ main {
     justify-content: space-between;
     display: flex;
     margin-right: 0.5em;
+  }
+  #all-filter {
+    grid-area: filters;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5em;
+    .filter {
+      color: var(--primary-200);
+      background-color: var(--secondary-800);
+      border-radius: 1em;
+      padding: 0.5em 1em;
+      display: flex;
+      gap: 0.3em;
+      align-items: center;
+      .divider {
+        color: var(--secondary-200);
+        font-size: 1.3rem;
+      }
+      .close {
+        font-size: 0.7em;
+        padding: 0.3em;
+      }
+    }
   }
   ul {
     grid-area: list;

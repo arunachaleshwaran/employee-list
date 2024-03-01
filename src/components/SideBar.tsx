@@ -24,9 +24,11 @@ export default function SideBar() {
   const employeeList = filters.reduce((empList, eachFilter) => {
     const [filterName, filterValue] = eachFilter;
     return empList.filter(employee =>
-      employee[filterName].match(filterValue)
+      new RegExp(filterValue, 'ui').exec(employee[filterName])
     );
   }, data ?? []);
+  const FILTER_TYPE_INDEX = 0,
+    FILTER_VALUE_INDEX = 1;
   return (
     <section id='side-bar'>
       <h1>
@@ -35,14 +37,24 @@ export default function SideBar() {
         />
         <Setting />
       </h1>
-      <section>
-        {filters.map(filter => (
-          <li key={`${filter[0]}${filter[1]}`}>
-            <span>{filter[0]}:</span>
-            <span>{filter[1]}</span>
-          </li>
+      <div id='all-filter'>
+        {filters.map((filter, index) => (
+          <span
+            key={`${filter[FILTER_TYPE_INDEX]}${filter[FILTER_VALUE_INDEX]}`}
+            className='filter'>
+            <span>{filter[FILTER_TYPE_INDEX]}</span>
+            <span className='divider'>|</span>
+            <span>{filter[FILTER_VALUE_INDEX]}</span>
+            <span
+              className='close'
+              onClick={() =>
+                setFilters(pre => pre.filter((_, i) => i !== index))
+              }>
+              &#10006;
+            </span>
+          </span>
         ))}
-      </section>
+      </div>
       {status === 'pending' && <div className='loader' />}
       {status === 'error' && <p>Error: {error?.message}</p>}
       {status === 'success' && (

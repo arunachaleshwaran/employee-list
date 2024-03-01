@@ -12,7 +12,7 @@ export default function Search({
 }: {
   readonly onComplete: (filter: Filter) => void;
 }) {
-  const [lastFilter, setLastFilter] = useState<Filter>();
+  const [lastFilter, setLastFilter] = useState<Filter | null>(null);
   const selectionRef = useRef<HTMLSelectElement>(null);
   const changeFilter: ChangeEventHandler<
     HTMLSelectElement
@@ -29,6 +29,8 @@ export default function Search({
     if (!lastFilter?.[0]) throw new Error('Filter not selected');
     if (event.key === 'Enter') {
       onComplete(lastFilter);
+      setLastFilter(null);
+      if (selectionRef.current) selectionRef.current.value = '';
     }
     return true;
   };

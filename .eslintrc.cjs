@@ -94,6 +94,10 @@ module.exports = {
     '@typescript-eslint/prefer-readonly-parameter-types': 'off',
     'no-console': 'off',
     'one-var': 'off',
+    'id-length': [
+      'error',
+      { exceptions: ['i', 'j', 'k', 'x', 'y', 'z', '_'] },
+    ],
     'no-nested-ternary': 'off',
     'no-ternary': 'off',
     'no-duplicate-imports': 'off',

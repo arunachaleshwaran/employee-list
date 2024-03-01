@@ -1,4 +1,4 @@
-import type { EmployeeData } from '../mock-server/EmployeeData.model';
+import type { EmployeeData } from '../data/EmployeeData.model';
 import { Setting } from './Setting';
 import { useQuery } from '@tanstack/react-query';
 

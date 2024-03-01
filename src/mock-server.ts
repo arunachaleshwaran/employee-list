@@ -1,4 +1,4 @@
-import { EmployeeList } from './EmployeeList';
+import { EmployeeList } from './data/EmployeeList';
 import { createServer } from 'miragejs';
 
 createServer({

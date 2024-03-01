@@ -1,6 +1,6 @@
 import './App.scss';
 import './mock-server';
-import SideBar from './component/SideBar';
+import SideBar from './components/SideBar';
 
 function App() {
   return (

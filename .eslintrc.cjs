@@ -69,6 +69,10 @@ module.exports = {
         allowBind: false,
       },
     ],
+    '@typescript-eslint/no-magic-numbers': [
+      'warn',
+      { ignore: [0, -1], enforceConst: true },
+    ],
     '@typescript-eslint/no-unused-vars': 'warn',
     '@typescript-eslint/consistent-type-definitions': [
       'error',

@@ -2,7 +2,7 @@ import './Setting.scss';
 import useSessionStorage from '../hook/useSessionStorage';
 import { useState } from 'react';
 
-export function Setting() {
+export default function Setting() {
   /** Refer @link {src/index.scss} Orange, Blue color rep.*/
   const DEFAULT_PRIMARY_HUE = 50,
     DEFAULT_SECONDARY_HUE = 240;

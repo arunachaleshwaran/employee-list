@@ -1,4 +1,5 @@
 import type { EmployeeData } from '../mock-server/EmployeeData.model';
+import { Setting } from './Setting';
 import { useQuery } from '@tanstack/react-query';
 
 export default function SideBar() {
@@ -15,7 +16,10 @@ export default function SideBar() {
   });
   return (
     <section id='side-bar'>
-      <h1>Employee List</h1>
+      <h1>
+        <span className='title'>Employee List</span>
+        <Setting />
+      </h1>
       {status === 'pending' && <div className='loader' />}
       {status === 'error' && <p>Error: {error?.message}</p>}
       {status === 'success' && (

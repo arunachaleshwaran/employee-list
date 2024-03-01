@@ -16,6 +16,9 @@ main {
   max-height: 100svh;
   h1 {
     grid-area: header;
+    justify-content: space-between;
+    display: flex;
+    margin-right: 0.5em;
   }
   ul {
     grid-area: list;

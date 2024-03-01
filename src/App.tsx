@@ -1,4 +1,4 @@
-import './App.css';
+import './App.scss';
 import './mock-server';
 import SideBar from './component/SideBar';
 

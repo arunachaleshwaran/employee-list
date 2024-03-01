@@ -19,6 +19,15 @@ main {
     justify-content: space-between;
     display: flex;
     margin-right: 0.5em;
+    gap: 0.5em;
+    select,
+    input {
+      flex-grow: 1;
+      color: var(--primary-200);
+      background-color: var(--secondary-700);
+      border-radius: 1em;
+      padding: 0.2em 1em;
+    }
   }
   #all-filter {
     grid-area: filters;
@@ -28,6 +37,7 @@ main {
     .filter {
       color: var(--primary-200);
       background-color: var(--secondary-800);
+      border: 0.1em solid var(--secondary-600);
       border-radius: 1em;
       padding: 0.5em 1em;
       display: flex;

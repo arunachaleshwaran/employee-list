@@ -34,3 +34,36 @@ body {
   syntax: '<number>';
   inherits: true;
 }
+input[type='range'] {
+  -webkit-appearance: none;
+  appearance: none;
+  background: transparent;
+  cursor: pointer;
+  width: 15rem;
+  @mixin runnable-track {
+    cursor: pointer;
+    box-shadow: 0 0 0.2em var(--secondary-100);
+    background: var(--secondary-200);
+    border-radius: 1em;
+  }
+  @mixin thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 1.5em;
+    height: 1.5em;
+    border-radius: 50%;
+    background: var(--secondary-300);
+  }
+  &::-webkit-slider-runnable-track {
+    @include runnable-track;
+  }
+  &::-moz-range-track {
+    @include runnable-track;
+  }
+  &::-webkit-slider-thumb {
+    @include thumb;
+  }
+  &::-moz-range-thumb {
+    @include thumb;
+  }
+}

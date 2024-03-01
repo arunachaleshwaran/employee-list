@@ -74,6 +74,15 @@ module.exports = {
       'error',
       'type',
     ],
+    '@typescript-eslint/restrict-template-expressions': [
+      'warn',
+      {
+        allowNumber: true,
+        allowBoolean: true,
+        allowAny: false,
+        allowNullish: false,
+      },
+    ],
     '@typescript-eslint/array-type': [
       'error',
       { default: 'generic' },

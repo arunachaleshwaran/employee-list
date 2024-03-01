@@ -1,14 +1,38 @@
 import './Setting.scss';
-import { useRef, useState } from 'react';
+import useSessionStorage from '../hook/useSessionStorage';
+import { useState } from 'react';
 
 export function Setting() {
-  const primaryHueRef = useRef<HTMLInputElement>(null);
-  const secondaryHueRef = useRef<HTMLInputElement>(null);
+  /** Refer @link {src/index.scss} Orange, Blue color rep.*/
+  const DEFAULT_PRIMARY_HUE = 50,
+    DEFAULT_SECONDARY_HUE = 240;
   const [isOpen, setIsOpen] = useState(false);
   const openSetting: React.DOMAttributes<HTMLDivElement>['onClick'] =
     () => {
       setIsOpen(!isOpen);
     };
+  const [primaryHue, setPrimaryHue] = useSessionStorage(
+    'primary-hue',
+    DEFAULT_PRIMARY_HUE
+  );
+  const [secondaryHue, setSecondaryHue] = useSessionStorage(
+    'secondary-hue',
+    DEFAULT_SECONDARY_HUE
+  );
+  const changePrimaryHue = (value: number) => {
+    document
+      // eslint-disable-next-line @typescript-eslint/no-magic-numbers
+      .getElementsByTagName('body')[0]
+      .style.setProperty('--hue-primary', `${value}`);
+    setPrimaryHue(value);
+  };
+  const changeSecondaryHue = (value: number) => {
+    document
+      // eslint-disable-next-line @typescript-eslint/no-magic-numbers
+      .getElementsByTagName('body')[0]
+      .style.setProperty('--hue-secondary', `${value}`);
+    setSecondaryHue(value);
+  };
   return (
     <span className={isOpen ? 'open' : ''}>
       <div className='icon' onClick={openSetting}>
@@ -26,21 +50,25 @@ export function Setting() {
         Theme
         <label htmlFor='primaryHue'>Primary Hue</label>
         <input
-          ref={primaryHueRef}
           id='primaryHue'
           max='255'
           min='0'
           type='range'
-          value='0'
+          value={`${primaryHue}`}
+          onChange={event =>
+            changePrimaryHue(parseInt(event.target.value, 10))
+          }
         />
         <label htmlFor='secondaryHue'>Secondary Hue</label>
         <input
-          ref={secondaryHueRef}
           id='secondaryHue'
           max='255'
           min='0'
           type='range'
-          value='0'
+          value={`${secondaryHue}`}
+          onChange={event =>
+            changeSecondaryHue(parseInt(event.target.value, 10))
+          }
         />
       </div>
     </span>

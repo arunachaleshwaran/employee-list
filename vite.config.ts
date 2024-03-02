@@ -21,4 +21,7 @@ export default defineConfig({
       },
     },
   },
+  define: {
+    SHOW_REACT_QUERY_DEVTOOLS: false,
+  },
 });

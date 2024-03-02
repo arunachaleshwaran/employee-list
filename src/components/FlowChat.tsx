@@ -7,11 +7,11 @@ import ReactFlow, {
   useNodesState,
   useStoreApi,
 } from 'reactflow';
+import { useQuery, useQueryClient } from '@tanstack/react-query';
 import type { EmployeeData } from '../data/EmployeeData.model';
 import arrangeFlowChatElements from '../helper/arrange-flow-chat-elements';
 import parseFlowChatElements from '../helper/parse-flow-chat-elements';
 import { useEffect } from 'react';
-import { useQuery } from '@tanstack/react-query';
 
 function useCalculatedElements(data: Array<EmployeeData>) {
   const [nodes, setNodes, onNodesChange] = useNodesState([]),
@@ -27,10 +27,11 @@ function useCalculatedElements(data: Array<EmployeeData>) {
 }
 export default function FlowChat() {
   const { data } = useQuery<
-    unknown,
-    Error | null,
-    Array<EmployeeData>
-  >({ queryKey: ['users'] });
+      unknown,
+      Error | null,
+      Array<EmployeeData>
+    >({ queryKey: ['users'] }),
+    queryClient = useQueryClient();
   const [nodes, edges, onNodesChange, onEdgesChange] =
       useCalculatedElements(data ?? []),
     store = useStoreApi();
@@ -79,6 +80,20 @@ export default function FlowChat() {
     else
       onEdgesChange([{ type: 'add', item: newEdge }, ...removeEdge]);
   };
+  const sendChangeManagerRequest = async (
+    employeeId: string,
+    managerId: string
+  ) => {
+    const response = await fetch('/api/change-manager', {
+      method: 'POST',
+      body: JSON.stringify({
+        employeeId,
+        managerId,
+      }),
+    });
+    await response.json();
+    await queryClient.invalidateQueries(['users']);
+  };
   const onNodeDragStop: NodeDragHandler = (_, node) => {
     const closestLead = getClosestLead(node);
     const newEdge = {
@@ -91,6 +106,7 @@ export default function FlowChat() {
       .filter(i => i.target === node.id)
       .map(i => ({ type: 'remove', id: i.id }) as const);
     onEdgesChange([{ type: 'add', item: newEdge }, ...removeEdge]);
+    void sendChangeManagerRequest(node.id, closestLead.id);
   };
   return (
     <section>

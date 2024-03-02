@@ -8,6 +8,9 @@ export default function arrangeFlowChatElements(
   nodes: Array<Node>,
   edges: Array<Edge>
 ): [Array<Node>, Array<Edge>] {
+  if (nodes.length === 0) {
+    return [nodes, edges] as const;
+  }
   const DIVIDE_INTO_HALF = 2,
     nodeHeight = 36,
     nodeWidth = 172;

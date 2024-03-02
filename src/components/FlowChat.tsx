@@ -92,7 +92,7 @@ export default function FlowChat() {
       }),
     });
     await response.json();
-    await queryClient.invalidateQueries(['users']);
+    await queryClient.invalidateQueries({ queryKey: ['users'] });
   };
   const onNodeDragStop: NodeDragHandler = (_, node) => {
     const closestLead = getClosestLead(node);

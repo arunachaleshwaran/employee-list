@@ -1,4 +1,6 @@
+/* eslint-disable @typescript-eslint/ban-ts-comment */
 import { defineConfig } from 'vite';
+// @ts-expect-error
 import eslintPlugin from 'vite-plugin-eslint';
 import react from '@vitejs/plugin-react';
 import sass from 'sass';

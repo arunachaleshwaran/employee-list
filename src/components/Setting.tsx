@@ -1,4 +1,4 @@
-import '../style/Setting.scss';
+import style from '../style/Setting.module.scss';
 import useSessionStorage from '../hook/useSessionStorage';
 import { useState } from 'react';
 
@@ -34,8 +34,8 @@ export default function Setting() {
     setSecondaryHue(value);
   };
   return (
-    <span className={isOpen ? 'open' : ''}>
-      <div className='icon' onClick={openSetting}>
+    <span className={isOpen ? style.open : ''}>
+      <div className={style.icon} onClick={openSetting}>
         <span />
         <span />
         <span />
@@ -46,7 +46,7 @@ export default function Setting() {
         <span />
         <span />
       </div>
-      <div className='list'>
+      <div className={style.list}>
         Theme
         <label htmlFor='primaryHue'>Primary Hue</label>
         <input

@@ -26,6 +26,28 @@ body {
   --secondary-800: oklch(13% 0.2 var(--hue-secondary));
   --secondary-900: oklch(5% 0.2 var(--hue-secondary));
 }
+@media (prefers-color-scheme: light) {
+  body {
+    --primary-900: oklch(95% 0.02 var(--hue-primary));
+    --primary-800: oklch(90% 0.1 var(--hue-primary));
+    --primary-700: oklch(80% 0.2 var(--hue-primary));
+    --primary-600: oklch(72% 0.22 var(--hue-primary));
+    --primary-500: oklch(67% 0.31 var(--hue-primary));
+    --primary-400: oklch(50% 0.25 var(--hue-primary));
+    --primary-300: oklch(30% 0.2 var(--hue-primary));
+    --primary-200: oklch(13% 0.2 var(--hue-primary));
+    --primary-100: oklch(5% 0.2 var(--hue-primary));
+    --secondary-900: oklch(95% 0.02 var(--hue-secondary));
+    --secondary-800: oklch(90% 0.1 var(--hue-secondary));
+    --secondary-700: oklch(80% 0.2 var(--hue-secondary));
+    --secondary-600: oklch(72% 0.22 var(--hue-secondary));
+    --secondary-500: oklch(67% 0.31 var(--hue-secondary));
+    --secondary-400: oklch(50% 0.25 var(--hue-secondary));
+    --secondary-300: oklch(30% 0.2 var(--hue-secondary));
+    --secondary-200: oklch(13% 0.2 var(--hue-secondary));
+    --secondary-100: oklch(5% 0.2 var(--hue-secondary));
+  }
+}
 @property --hue-primary {
   syntax: '<number>';
   inherits: true;
@@ -43,7 +65,7 @@ input[type='range'] {
   @mixin runnable-track {
     cursor: pointer;
     box-shadow: 0 0 0.2em var(--secondary-100);
-    background: var(--secondary-200);
+    background: var(--secondary-700);
     border-radius: 1em;
   }
   @mixin thumb {
@@ -52,7 +74,7 @@ input[type='range'] {
     width: 1.5em;
     height: 1.5em;
     border-radius: 50%;
-    background: var(--secondary-300);
+    background: var(--secondary-200);
   }
   &::-webkit-slider-runnable-track {
     @include runnable-track;

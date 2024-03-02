@@ -9,7 +9,7 @@
   span {
     width: calc(var(--width) / 6);
     height: calc(var(--width) / 6);
-    background-color: var(--secondary-200);
+    background-color: var(--secondary-100);
     display: block;
     border-radius: 50%;
     position: absolute;
@@ -89,19 +89,19 @@
 }
 .list {
   display: none;
-  background-color: var(--secondary-700);
+  background-color: var(--secondary-800);
   flex-direction: column;
   gap: 0.5em;
   position: absolute;
   padding: 0.5em;
   margin: 0.3em;
-  border: 0.1em solid var(--secondary-400);
+  border: 0.1em solid var(--secondary-300);
   box-shadow: 0.1em 0.1em 0.2em var(--secondary-100);
   border-radius: 0.5em;
   translate: -50%;
-  color: var(--primary-300);
+  color: var(--primary-200);
   label {
     font-size: 0.8rem;
-    color: var(--primary-200);
+    color: var(--primary-100);
   }
 }

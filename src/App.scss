@@ -4,8 +4,8 @@ main {
   height: 100vh;
 }
 #side-bar {
-  background-color: var(--primary-700);
-  color: var(--secondary-200);
+  background-color: var(--primary-800);
+  color: var(--secondary-100);
   padding: 0 0.5em;
   display: grid;
   grid-template-rows: auto auto 1fr;
@@ -23,8 +23,8 @@ main {
     select,
     input {
       flex-grow: 1;
-      color: var(--primary-200);
-      background-color: var(--secondary-700);
+      color: var(--primary-100);
+      background-color: var(--secondary-800);
       border-radius: 1em;
       padding: 0.2em 1em;
     }
@@ -35,16 +35,16 @@ main {
     flex-wrap: wrap;
     gap: 0.5em;
     .filter {
-      color: var(--primary-200);
-      background-color: var(--secondary-800);
-      border: 0.1em solid var(--secondary-600);
+      color: var(--primary-100);
+      background-color: var(--secondary-900);
+      border: 0.1em solid var(--secondary-700);
       border-radius: 1em;
       padding: 0.5em 1em;
       display: flex;
       gap: 0.3em;
       align-items: center;
       .divider {
-        color: var(--secondary-200);
+        color: var(--secondary-100);
         font-size: 1.3rem;
       }
       .close {
@@ -61,16 +61,16 @@ main {
     flex-direction: column;
     overflow-y: auto;
     scrollbar-width: thin;
-    scrollbar-color: var(--primary-300) var(--primary-700);
+    scrollbar-color: var(--primary-200) var(--primary-800);
     scrollbar-width: thin;
   }
   li {
     list-style-type: none;
     padding: 0.5em;
-    border: 1px solid var(--primary-400);
+    border: 1px solid var(--primary-300);
     border-radius: 0.5em;
     .name {
-      color: var(--primary-200);
+      color: var(--primary-100);
     }
     .designation {
       font-size: 0.7rem;

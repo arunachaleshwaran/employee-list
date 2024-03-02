@@ -2,7 +2,7 @@
   min-width: 0;
   box-sizing: border-box;
 }
-
+@layer base, layout;
 body {
   margin: unset;
   --hue-primary: 50; /* orange */
@@ -56,36 +56,39 @@ body {
   syntax: '<number>';
   inherits: true;
 }
-input[type='range'] {
-  -webkit-appearance: none;
-  appearance: none;
-  background: transparent;
-  cursor: pointer;
-  width: 15rem;
-  @mixin runnable-track {
-    cursor: pointer;
-    box-shadow: 0 0 0.2em var(--secondary-100);
-    background: transparent;
-    border-radius: 1em;
-  }
-  @mixin thumb {
+@layer base {
+  @import url('reactflow/dist/style.css');
+  input[type='range'] {
     -webkit-appearance: none;
     appearance: none;
-    width: 1.5em;
-    height: 1.5em;
-    border-radius: 20%;
-    background: var(--secondary-200);
-  }
-  &::-webkit-slider-runnable-track {
-    @include runnable-track;
-  }
-  &::-moz-range-track {
-    @include runnable-track;
-  }
-  &::-webkit-slider-thumb {
-    @include thumb;
-  }
-  &::-moz-range-thumb {
-    @include thumb;
+    background: transparent;
+    cursor: pointer;
+    width: 15rem;
+    @mixin runnable-track {
+      cursor: pointer;
+      box-shadow: 0 0 0.2em var(--secondary-100);
+      background: transparent;
+      border-radius: 1em;
+    }
+    @mixin thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 1.5em;
+      height: 1.5em;
+      border-radius: 20%;
+      background: var(--secondary-200);
+    }
+    &::-webkit-slider-runnable-track {
+      @include runnable-track;
+    }
+    &::-moz-range-track {
+      @include runnable-track;
+    }
+    &::-webkit-slider-thumb {
+      @include thumb;
+    }
+    &::-moz-range-thumb {
+      @include thumb;
+    }
   }
 }

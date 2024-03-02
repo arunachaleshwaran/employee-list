@@ -2,7 +2,8 @@
   min-width: 0;
   box-sizing: border-box;
 }
-@layer base, layout;
+@layer lib, base, layout;
+@import url('reactflow/dist/style.css') layer(lib);
 body {
   margin: unset;
   --hue-primary: 50; /* orange */
@@ -57,7 +58,6 @@ body {
   inherits: true;
 }
 @layer base {
-  @import url('reactflow/dist/style.css');
   input[type='range'] {
     -webkit-appearance: none;
     appearance: none;

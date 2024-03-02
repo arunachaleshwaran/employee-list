@@ -94,6 +94,7 @@ module.exports = {
     '@typescript-eslint/prefer-readonly-parameter-types': 'off',
     'no-console': 'off',
     'one-var': 'off',
+    '@typescript-eslint/max-params': ['warn', { max: 5 }],
     'id-length': [
       'error',
       { exceptions: ['i', 'j', 'k', 'x', 'y', 'z', '_'] },

@@ -1,0 +1,23 @@
+@layer base {
+  .react-flow {
+    background-color: var(--secondary-900);
+    color: var(--primary-100);
+    &__node {
+      color: var(--primary-100);
+      background-color: var(--secondary-700);
+      border: 1px solid var(--secondary-400);
+    }
+    &__handle {
+      background-color: var(--secondary-500);
+      border: 1px solid var(--secondary-300);
+    }
+    &__node-group {
+      opacity: 0.3;
+    }
+    &__edge-path {
+      stroke: var(--secondary-500);
+    }
+  }
+}
+@layer layout {
+}

@@ -40,8 +40,11 @@ export default function Search({
   };
   return (
     <>
-      <select ref={selectionRef} onChange={changeFilter}>
-        <option selected={!selectionRef.current} value='' />
+      <select
+        ref={selectionRef}
+        value={selectionRef.current?.value ?? ''}
+        onChange={changeFilter}>
+        <option value='' />
         {EmployeeFilters.map(employeeFilter => (
           <option
             key={employeeFilter.name}

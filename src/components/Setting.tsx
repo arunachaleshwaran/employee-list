@@ -1,4 +1,4 @@
-import './Setting.scss';
+import '../style/Setting.scss';
 import useSessionStorage from '../hook/useSessionStorage';
 import { useState } from 'react';
 

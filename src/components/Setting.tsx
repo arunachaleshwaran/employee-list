@@ -5,7 +5,7 @@ import { useState } from 'react';
 export default function Setting() {
   /** Refer @link {src/index.scss} Orange, Blue color rep.*/
   const DEFAULT_PRIMARY_HUE = 50,
-    DEFAULT_SECONDARY_HUE = 240;
+    DEFAULT_SECONDARY_HUE = 200;
   const [isOpen, setIsOpen] = useState(false);
   const openSetting: React.DOMAttributes<HTMLDivElement>['onClick'] =
     () => {

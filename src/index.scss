@@ -7,7 +7,7 @@
 body {
   margin: unset;
   --hue-primary: 50; /* orange */
-  --hue-secondary: 240; /* blue */
+  --hue-secondary: 200; /* teal */
   --primary-100: oklch(95% 0.02 var(--hue-primary));
   --primary-200: oklch(90% 0.1 var(--hue-primary));
   --primary-300: oklch(80% 0.2 var(--hue-primary));

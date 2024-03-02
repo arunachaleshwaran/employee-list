@@ -1,30 +1,27 @@
-# React + TypeScript + Vite
+# Setup
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+1. clone the repo.
+2. Open the repo in vscode. In bottom right corner it will show a alert to `install recommenced extensions`.
+3. `npm install` on terminal.
+4. Now click on `F1` or `ctrl+shift+p`/`cmd+shift+p` command pallet will appear. Search for Reload Window and select it. It will reload the vscode.
+5. Now click on `F5` on meanwhile vscode's extension will start vite on terminal. Or you can run `npm run dev` on terminal the url is `http://localhost:4000/`
 
-Currently, two official plugins are available:
+# Task
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+1. Initial UI will look like this
+   ![initial screen](docs/01-intial-screen.png)
+2. UI to add filter. Have validations on filters.
+   ![adding filters](docs/02-add-filter.png)
+3. We can move all the nodes without the any direct report to lead level people.
 
-## Expanding the ESLint configuration
+# Extra Things
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Dark Theme and Light Theme
 
-- Configure the top-level `parserOptions` property like this:
+![Dark Theme](docs/dark-theme.png)
+![Light Theme](docs/light-theme.png)
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+## Customize the UI colors
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+![Dark Theme Customize](docs/dark-theme-customize.png)
+![Light Theme Customize](docs/light-theme-customize.png)

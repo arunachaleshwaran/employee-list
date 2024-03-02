@@ -1,9 +1,8 @@
 @layer base {
   .react-flow {
     background-color: var(--secondary-900);
-    color: var(--primary-100);
     &__node {
-      color: var(--primary-100);
+      color: var(--primary-200);
       background-color: var(--secondary-700);
       border: 1px solid var(--secondary-400);
     }

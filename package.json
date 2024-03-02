@@ -15,6 +15,7 @@
     "src/**/*.{cjs,tsx,md,json}": ["eslint", "prettier --write"]
   },
   "dependencies": {
+    "@dagrejs/dagre": "^1.0.4",
     "@tanstack/react-query": "^5.24.1",
     "miragejs": "^0.1.48",
     "react": "^18.2.0",

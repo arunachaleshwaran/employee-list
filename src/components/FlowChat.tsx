@@ -1,28 +1,10 @@
 import '../style/ReactFlow.scss';
-import type { Edge, Node } from 'reactflow';
-import ReactFlow, { Background } from 'reactflow';
+import ReactFlow, { Background, ConnectionLineType } from 'reactflow';
 import type { EmployeeData } from '../data/EmployeeData.model';
+import arrangeFlowChatElements from '../helper/arrange-flow-chat-elements';
+import parseFlowChatElements from '../helper/parse-flow-chat-elements';
 import { useQuery } from '@tanstack/react-query';
 
-const getElements = (
-  employees: Array<EmployeeData>
-): [Array<Node>, Array<Edge>] => {
-  const edges: Array<Edge> = [],
-    nodes: Array<Node> = [];
-  employees.forEach(employee => {
-    nodes.push({
-      id: employee.id,
-      data: { label: employee.name },
-      position: { x: 0, y: 0 },
-    });
-    edges.push({
-      id: `${employee.id}-${employee.manager}`,
-      source: employee.manager,
-      target: employee.id,
-    });
-  });
-  return [nodes, edges];
-};
 export default function FlowChat() {
   const { data, status } = useQuery<
     unknown,
@@ -30,11 +12,18 @@ export default function FlowChat() {
     Array<EmployeeData>
   >({ queryKey: ['users'] });
   const [nodes, edges] =
-    status === 'success' ? getElements(data) : [[], []];
+    status === 'success'
+      ? arrangeFlowChatElements(...parseFlowChatElements(data))
+      : [[], []];
 
   return (
     <section>
-      <ReactFlow edges={edges} nodes={nodes} nodesConnectable={false}>
+      <ReactFlow
+        connectionLineType={ConnectionLineType.SmoothStep}
+        edges={edges}
+        nodes={nodes}
+        nodesConnectable={false}
+        fitView>
         <Background />
       </ReactFlow>
     </section>

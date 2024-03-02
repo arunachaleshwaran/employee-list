@@ -65,7 +65,7 @@ input[type='range'] {
   @mixin runnable-track {
     cursor: pointer;
     box-shadow: 0 0 0.2em var(--secondary-100);
-    background: var(--secondary-700);
+    background: transparent;
     border-radius: 1em;
   }
   @mixin thumb {

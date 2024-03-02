@@ -17,6 +17,10 @@ export default function Search({
   const changeFilter: ChangeEventHandler<
     HTMLSelectElement
   > = event => {
+    if (!event.target.value) {
+      setLastFilter(null);
+      return;
+    }
     setLastFilter([event.target.value as Filter[0], '']);
   };
   const changeFilterSearch: ChangeEventHandler<

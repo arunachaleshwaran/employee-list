@@ -4,7 +4,7 @@ main {
   height: 100vh;
 }
 #side-bar {
-  background-color: var(--primary-800);
+  background-color: var(--primary-900);
   color: var(--secondary-100);
   padding: 0 0.5em;
   display: grid;
@@ -24,9 +24,11 @@ main {
     input {
       flex-grow: 1;
       color: var(--primary-100);
-      background-color: var(--secondary-800);
+      background-color: var(--secondary-700);
       border-radius: 1em;
-      padding: 0.2em 1em;
+      &:disabled {
+        opacity: 0.5;
+      }
     }
   }
   #all-filter {
@@ -67,6 +69,7 @@ main {
   li {
     list-style-type: none;
     padding: 0.5em;
+    background-color: var(--primary-800);
     border: 1px solid var(--primary-300);
     border-radius: 0.5em;
     .name {

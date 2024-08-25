@@ -44,9 +44,5 @@
     "typescript": "^5.2.2",
     "vite": "^5.1.4",
     "vite-plugin-eslint": "^1.8.1"
-  },
-  "engines": {
-    "node": "^21",
-    "npm:": "^10"
   }
 }
